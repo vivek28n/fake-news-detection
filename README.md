@@ -77,3 +77,153 @@ Model Evaluation
 Model Comparison
    ↓
 New Text Prediction
+🧹 Data Preprocessing
+The following preprocessing steps are applied:
+- Convert text to lowercase
+- Remove URLs
+- Remove HTML tags
+- Remove non-alphabetic characters
+- Remove extra spaces
+- Remove English stopwords
+- Combine news title and article text
+The cleaned text is then converted into numerical sequences using a Keras
+Tokenizer and padded to a fixed length.
+🧠 Deep Learning Models
+Three deep learning architectures are implemented.
+1. LSTM
+Long Short-Term Memory (LSTM) is a recurrent neural network architecture
+that can capture sequential patterns in text.
+Architecture:
+Embedding
+    ↓
+LSTM
+    ↓
+Dropout
+    ↓
+Dense
+    ↓
+Sigmoid
+2. BiLSTM
+Bidirectional LSTM processes the sequence in both forward and backward
+directions, allowing the model to use information from both directions.
+Architecture:
+Embedding
+    ↓
+Bidirectional LSTM
+    ↓
+Dropout
+    ↓
+Dense
+    ↓
+Sigmoid
+3. CNN + BiLSTM Hybrid
+The hybrid model combines convolutional and bidirectional recurrent layers
+to capture local text patterns and sequential information.
+Architecture:
+Embedding
+    ↓
+Conv1D
+    ↓
+Bidirectional LSTM
+    ↓
+Dropout
+    ↓
+Dense
+    ↓
+Sigmoid
+📊 Model Evaluation
+The models are evaluated using:
+- Accuracy
+- Precision
+- Recall
+- F1 Score
+- Confusion Matrix
+| Model | Accuracy | Precision | Recall | F1 Score |
+|------|---------:|----------:|-------:|---------:|
+| LSTM | 97.94% | 98.17% | 97.48% | 97.82% |
+| BiLSTM | 99.82% | 99.79% | 99.84% | 99.81% |
+| CNN + BiLSTM | 99.91% | 99.98% | 99.84% | 99.91% |
+These results are obtained on the held-out test set used in the notebook.
+📈 Results
+The implemented models were able to classify the test dataset with high
+performance.
+The project also includes:
+- Training and validation accuracy graphs
+- Training and validation loss graphs
+- Confusion matrices
+- Classification reports
+- Model performance comparison
+🔮 Prediction
+The trained hybrid model can be used to classify new text entered by the
+user.
+Example:
+Input News
+    ↓
+Text Cleaning
+    ↓
+Tokenization
+    ↓
+Padding
+    ↓
+CNN + BiLSTM Model
+    ↓
+Fake / Real Prediction
+🛠️ Technologies Used
+- Python
+- Google Colab
+- Pandas
+- NumPy
+- NLTK
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- TensorFlow / Keras
+- Git
+- GitHub
+📁 Project Structure
+fake-news-detection/
+│
+├── data/
+│   └── raw/
+│       ├── Fake.csv
+│       └── True.csv
+│
+├── notebooks/
+│   └── Fake_News_Detection.ipynb
+│
+├── models/
+│   ├── fake_news_hybrid_model.keras
+│   └── tokenizer.pkl
+│
+├── README.md
+└── requirements.txt
+🚀 Future Scope
+The project can be further extended by:
+- Experimenting with Transformer-based architectures such as BERT.
+- Using larger and more diverse datasets.
+- Supporting multilingual fake news detection.
+- Developing a web-based interface for users.
+- Adding real-time news verification features.
+- Integrating reliable external sources for fact verification.
+- Improving robustness against newly emerging forms of misinformation.
+⚠️ Limitations
+The model learns patterns from the dataset used for training and testing.
+Therefore, its predictions should not be treated as independent factual
+verification of a news article.
+Performance on new sources, topics, writing styles, or unseen types of
+misinformation may differ from the reported test-set results.
+📚 Academic Project
+This project was developed as part of an academic Deep Learning project.
+Team
+Vivek Nigam & Riddhima Tripathi
+
+### Ab GitHub mein kya karna hai
+
+Repo mein:
+
+**`README.md` → Edit ✏️ → pura old content replace → above content paste → Commit changes**
+
+Commit message:
+
+```text
+Update README with final project details and results
