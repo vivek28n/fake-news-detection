@@ -138,11 +138,11 @@ The models are evaluated using:
 - Recall
 - F1 Score
 - Confusion Matrix
-| Model | Accuracy | Precision | Recall | F1 Score |
-|------|---------:|----------:|-------:|---------:|
-| LSTM | 97.94% | 98.17% | 97.48% | 97.82% |
-| BiLSTM | 99.82% | 99.79% | 99.84% | 99.81% |
-| CNN + BiLSTM | 99.91% | 99.98% | 99.84% | 99.91% |
+| Model | Accuracy | Precision | Recall | F1 |
+|---|---:|---:|---:|---:|
+| LSTM | 97.00% | 98.37% | 95.26% | 96.79% |
+| BiLSTM | 99.85% | 99.86% | 99.83% | 99.85% |
+| CNN + BiLSTM | **99.89%** | **99.93%** | **99.83%** | **99.88%** |
 These results are obtained on the held-out test set used in the notebook.
 📈 Results
 The implemented models were able to classify the test dataset with high
